@@ -1,0 +1,259 @@
+SQL Power Wabit Release Notes
+
+Noteworthy changes in 1.3.1
+Bug Fixes
+    * Fixes a bug where the parameters would reset after doing a print preview
+    * Fixes a bug in the way parameters were saved/loaded. Some would just disapear.
+    * fixes a bug where relational resultsets would overflow their allocated space in 
+        the thin client 
+    * Fixes bugs with the result set renderer totals
+
+Improvements
+    * Performance fixes when updating a result set in the thin client
+    * Result sets embeded in reports display groupings properly
+    * Thin client now displays the report parameters
+
+Noteworthy changes in 1.3.0-RC2
+Bug Fixes
+    * Fixes a bad UTF encoding in numeric format options
+    * Reports were sometimes printing result set column borders
+    * Parameters panel could be displayed for non ContextAware? content boxes.
+    * OLAP query reset button was not sending reset event to the query panel 
+
+Noteworthy changes in 1.3.0-RC1
+Improvements
+    * Parameters and parameter value selectors have been added report content boxes.
+    * Global report parameters and parameter value selectors have been added.
+    * SQL Power Wabit thin client libraries are now completely independent and can be embedded in web pages and corporate web sites.
+
+Bug Fixes
+    * Fixes UI freeze when populating a query results table with >1000 rows.
+
+Noteworthy changes in 1.2.0
+
+  Improvements
+    * Full support of variables in queries
+    * Variables are displayed as "pretty boxes"
+    * Queries now run on background threads
+    * All queries share a common data access API
+    * OLAP queries can be rendered in a relational way
+    * Re-designed the relational result set renderer properties panel
+    
+  Bug Fixes
+    * Fixes bugs with new data events in the GUI. Events are now buffered and coalesced.
+    * Fixes bug with global row limit
+
+Noteworthy Changes in 1.1.1
+
+  Improvements:
+    * Uses the SQLP Library's variable insertion GUI.
+    * Relational queries can expose variables to other objects.
+    * Relational queries can use variables.
+    * OLAP queries can expose variables to other objects.
+
+  Bug fixes:
+    * Replacing data source when opening local workspace causes problem with SQL queries
+    * Wabit deletes entire workspace file if it encounters an exception during save
+    * The stop button on the query text editor is never becoming enabled.
+	* Initial creation of report on trial server takes too much time
+	* Datasource copy issues between servers and clients
+
+Noteworthy Changes in 1.1.0
+
+  SQL Power Library Support
+    * Refactoring was performed to support changes to the SQL Power Library. 
+      Many of the Wabit specific classes have been made generic and pushed 
+      down to SQL Power Library so they can be reused.
+
+Noteworthy Changes in 1.0.1
+
+  Bug Fixes
+   * Fixes a bug with the server where modifying an image would make all clients crash
+   * Fixes a bug with the server where modifying a relational query would make all clients crash
+   * Fixes a bug where creating relational queries might corrupt the JCR repository
+   * Numerous performance/stability enhancements
+   * Ability to create server-side datasources from clients
+   * Licensing enforcement changes
+
+Noteworthy Changes in 1.0.0
+
+  User Interface
+    * Added 'Gratuitous Animation' feature to charts
+    
+  Wabit Enterprise Server Support
+    * Added support for connecting to, and communicating with the Wabit Enterprise Server   
+
+Noteworthy Changes in 0.9.9
+
+  User Interface
+    * Changed the tabs of trees to stacked tabs.
+    
+  Charts
+    * The charts look have been improved and now look glossy.
+    
+  Reports
+    * Changed the image properties panel to allow users to stretch the image or
+      change the image's alignment.
+    
+  Overall
+    * The user guide has been updated with new screen shots
+    * Minor bug fixes.
+
+Noteworthy Changes in 0.9.8
+
+  Relational Queries
+    * Added a setting to stop queires from executing automatically. Now queries
+      will be executed only by user choice if this setting is enabled.
+
+  Olap Queries
+    * Added a filter to the Olap queries.
+    
+  Images
+    * Images are now outside of reports. The same image can be added to multiple
+      reports.
+      
+  Charts
+    * Charts are now created outside of reports. The same chart can be added
+      to multiple reports.
+    * Changed the UI for charts to improve the layout of information.
+    * Added pie charts.
+    
+  Templates
+    * There are now templates in Wabit. Users can define their own layout of 
+      components and reuse the templates for multiple reports.
+      
+  Reports
+    * The content in boxes in the report can now be replaced by dropping one object
+      onto the content box that is already filled.
+    * Added a print preview to reports. The entire report can be viewed this way before
+      printing or creating a PDF.
+    * Fixed the page type of the report layout.
+  
+  Overall
+    * There are now multiple workspaces in the same Wabit window. The workspaces can be
+      navigated by tabs.
+    * Added a workspace search that will search across all workspaces open in Wabit.
+    * The drag tree can now be undocked from the right of the editor. It can also be hidden.
+      With this the workspace tree can be dragged from.
+
+Noteworthy Changes in 0.9.7
+  Charts
+    * Support for creating Line, Bar, and Scatter charts based off of 
+      relational and OLAP queries in a Report
+
+  OLAP Support
+    * Brand new support for creating reports based of Multi-dimensional OLAP Cubes
+    * Support for querying on XML/A servers, or on an in-process Mondrian server
+    * A new OLAP query editor that supports a mouse-driven, drag-and-drop interface, 
+      and the ability to modify the underlying MDX query directly
+    * Ability to create charts off of OLAP queries
+
+  Server Support
+    * Added support for discovering and connecting to remote servers
+    * Capability of saving and loading projects on a remote server    
+
+  Other
+  	* Added support for streaming queries (SQLstream support)
+
+  User Interface
+    * The concept that was called "Project" up until 0.9.6 is now called
+      "Workspace." The semantics of a workspace are exactly the same as
+      the semantics of a project. In other words, "Fun new name, same
+      great taste!"
+      
+  Bug Fixes
+    * The sub-totals in the result set renderer are now correct on printouts. 
+  
+
+Noteworthy Changes in 0.9.6
+  User Interface
+    * There is a row limit that affects all queries and reports to speed up loading pages in Wabit. This limit does not affect printing.
+    * Deleting a data source now can now delete or update queries and reports associated with the data source.
+    
+  Other
+    * Fixed an exception occurring when loading a project with a data source that no longer exists in the pl.ini or cannot be connected to.
+    * Updated the user guide.
+
+
+Noteworthy Changes in 0.9.5
+  User Interface
+    * The starting of Wabit has changed to include a welcome screen and new project screen.
+    
+  Query Interface
+    * Quick changes to queries no longer show stale data from intermediate steps.
+    * Enhanced exception messages when queries fail due to connection problems.
+    * The query text editor now remembers executed query history and can be navigated
+      instead of just navigating individual edits.
+    
+  Other
+    * Added a user guide and help menu options.
+    * Connections that cannot connect to their data source can no longer be added to a project.
+    * New prompt for replacing old or missing database connections when loading projects with
+      failing connections.
+    * Wabit now opens with the last project modified by the user.
+    * Added the ability to make new projects without having to restart Wabit.
+    * Added progress bars to printing and PDF creation.
+    * About and Quit now work properly on Mac.
+
+
+Noteworthy Changes in 0.9.4
+  Query Interface
+    * Queries now have a log tab to display number of lines changed on inserts and updates
+      and tell how long a query took to execute.
+    * Columns in queries now remember their widths.
+    * Empty queries will no longer be executed.
+    
+  Other
+    * Editor windows can now be maximized from the menu.
+    * Fixed memory leaks.
+
+
+Noteworthy Changes in 0.9.3
+  User Interface
+    * Rearranged the layout of column info in the Properties Panel of a result set so that 
+      they are shown in rows to make better usage of space.
+    * If there are unsaved changes to the project, the user gets prompted to save
+
+  Report Layout Editor
+    * Report Content Boxes can have a background colour added.
+    * Reports can now have images imbedded into them
+    * Result sets can now have borders added to them
+    
+  Query Pen
+    * Performance when dragging in tables from an Oracle Database into the Query Pen 
+      should be improved
+    * It is now possible to save your Query as a SQL file
+    
+  Other
+    * Windows file associations should now work for Wabit Project (.wabit) files
+
+
+Noteworthy Changes in 0.9.2
+  User Interface
+    * Zooming in Query and Report Editors are now done with a slider
+    * New graphical look in the Query Editor
+    * Application layout settings are remembered in between sessions
+
+  Query Editor
+    * Added new constants including Count(*), current date, current time, and user
+  
+  Report Layout Editor
+    * Support for defining breaks and subtotals
+    * Queries can be added into a report using drag-and-drop
+    * Added buttons for creating horizontal and vertical guides
+    * Guides can now be deleted
+    * Added a Zoom to Fit button
+    * The query results will update when the query changes
+    * Columns auto-size when the layout is first created
+
+  Bug Fixes
+    * The application now creates a default pl.ini (database configuration file) if it does not exist.
+    * Changes to the query in the Query Editor now get reflected in the Report Layout Editor
+    * Delete content boxes in the Report Layout now also removes it from the left-hand tree
+    * Printing on multiple pages no longer loses rows between the pages.
+    * Printing across multiple pages will increase the number of pages as necessary instead of
+      being stuck at the previous page count.
+
+
+Noteworthy Changes in 0.9.1
+  * Initial release
